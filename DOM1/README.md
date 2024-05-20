@@ -17,4 +17,4 @@ Took a reference of the div element using its ID ("container")
 
 ## HOSTED VERSION
 
-Click on the [hosted link](https://varunarora137.github.io/DOM1/) to view the project.
+Click on the [hosted link](https://varunarora137.github.io/js_assignments/DOM1/index.html) to view the project.
