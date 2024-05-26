@@ -19,8 +19,8 @@ btn.addEventListener("click", (e) => {
   const currMonth = currDate.getMonth() + 1;
 
   let yearDiff = currYear - inputYear;
-  const monthDiff = currMonth - inputMonth;
-  const dateDiff = currDat - inputDat;
+  let monthDiff = currMonth - inputMonth;
+  let dateDiff = currDat - inputDat;
 
   if (
     (dateDiff < 0 && monthDiff <= 0 && yearDiff <= 0) ||
@@ -30,8 +30,17 @@ btn.addEventListener("click", (e) => {
     alert("Not Born Yet");
     return;
   }
-  if (monthDiff < 0 || (monthDiff === 0 && dateDiff < 0)) {
+  if (monthDiff < 0) {
     yearDiff--;
+    monthDiff = 12 + monthDiff;
+  }
+  if (dateDiff < 0) {
+    monthDiff--;
+    dateDiff = 31 + dateDiff;
+    if (monthDiff < 0) {
+      monthDiff = 11;
+      yearDiff--;
+    }
   }
 
   divs.children[0].children[0].innerText = `${Math.abs(yearDiff)}`;
