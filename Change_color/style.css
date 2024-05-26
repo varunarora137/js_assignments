@@ -41,26 +41,33 @@
 button {
   background-color: black;
   color: white;
-  padding: 15px 25px 10px 25px;
+  padding: 13px 25px 10px 25px;
   border-radius: 13px;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s linear;
+  outline: none;
+  transition: all 0.2s ease-in-out;
 }
 button:hover {
   box-shadow: 0 5px 8px grey;
   transform: translateY(-2px);
 }
+button:active {
+  transform: translateY(0px);
+  box-shadow: none;
+}
 #square {
   height: 70px;
   width: 70px;
   background-color: white;
+  animation: move-anti 0.5s ease-in-out;
 }
 #rectangle {
   height: 70px;
   width: 100px;
   background-color: white;
+  animation: move-circle 0.5s ease-in-out;
 }
 #heptagon {
   height: 70px;
@@ -75,6 +82,7 @@ button:hover {
     0% 60%,
     10% 20%
   );
+  animation: move-anti 0.5s ease-in-out;
 }
 #bevel {
   height: 70px;
@@ -90,18 +98,21 @@ button:hover {
     0% 80%,
     0% 20%
   );
+  animation: move-circle 0.5s ease-in-out;
 }
 #rightpoint {
   height: 70px;
   width: 70px;
   background-color: white;
   clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+  animation: move-anti 0.5s ease-in-out;
 }
 #leftpoint {
   height: 70px;
   width: 70px;
   background-color: white;
   clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+  animation: move-circle 0.5s ease-in-out;
 }
 #star {
   height: 70px;
@@ -119,6 +130,7 @@ button:hover {
     2% 35%,
     39% 35%
   );
+  animation: move-anti 0.5s ease-in-out;
 }
 #rightarrow {
   height: 70px;
@@ -133,6 +145,7 @@ button:hover {
     60% 80%,
     0% 80%
   );
+  animation: move-circle 0.5s ease-in-out;
 }
 #leftarrow {
   height: 70px;
@@ -147,6 +160,7 @@ button:hover {
     40% 100%,
     0% 50%
   );
+  animation: move-anti 0.5s ease-in-out;
 }
 #close {
   height: 70px;
@@ -166,6 +180,7 @@ button:hover {
     80% 0%,
     50% 30%
   );
+  animation: move-circle 0.5s ease-in-out;
 }
 #message {
   height: 70px;
@@ -180,4 +195,21 @@ button:hover {
     50% 75%,
     0% 75%
   );
+  animation: move-anti 0.5s ease-in-out;
+}
+@keyframes move-circle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes move-anti {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

@@ -2,7 +2,8 @@ const inputDate = document.querySelector("#date");
 const btn = document.querySelector("button");
 const divs = document.querySelector(".display");
 
-btn.addEventListener("click", () => {
+btn.addEventListener("click", (e) => {
+  e.preventDefault();
   if (inputDate.value === "") {
     alert("Please Enter Date");
     return;

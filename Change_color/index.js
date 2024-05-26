@@ -33,10 +33,12 @@ const shapeOption = [
 color.addEventListener("click", () => {
   const num = Math.trunc(Math.random() * 11);
   circle.style.backgroundColor = `${colorOptions[num]}`;
-  console.log(num);
 });
 
 shape.addEventListener("click", () => {
   const num = Math.trunc(Math.random() * 11);
-  circle.children[0].id = `${shapeOption[num]}`;
+  const element = circle.children[0];
+  element.removeAttribute("id");
+  void element.offsetWidth;
+  element.id = `${shapeOption[num]}`;
 });
