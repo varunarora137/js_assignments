@@ -46,4 +46,12 @@ btn.addEventListener("click", (e) => {
   divs.children[0].children[0].innerText = `${Math.abs(yearDiff)}`;
   divs.children[1].children[0].innerText = `${Math.abs(monthDiff)}`;
   divs.children[2].children[0].innerText = `${Math.abs(dateDiff)}`;
+
+  const h1 = document.querySelectorAll("h1");
+  console.log(h1);
+  h1.forEach((h) => {
+    h.classList.remove("rotate");
+    void h.offsetWidth;
+    h.classList.add("rotate");
+  });
 });
