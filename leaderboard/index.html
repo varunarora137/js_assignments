@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <title>LeaderBoard</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>
+        <span class="h1-first">L</span>EADER<span class="h1-second">B</span>OARD
+      </h1>
+      <form>
+        <input
+          type="text"
+          name="first-name"
+          placeholder="First Name"
+          class="first-name"
+        /><input
+          type="text"
+          name="last-name"
+          class="last-name"
+          placeholder="Last Name"
+        /><input
+          type="text"
+          name="country"
+          placeholder="Country"
+          class="country"
+        />
+        <input
+          type="number"
+          name="score"
+          placeholder="Player Score"
+          class="score"
+        />
+        <input type="submit" value="Add Player" class="submit" />
+      </form>
+      <div class="leaderboard-container">
+        <div class="required">All fields are required</div>
+        <div class="leaderboard-data">
+          <div class="data1">
+            <div>
+              <p>LAXMI SHARMA</p>
+              <span class="time">FEB 2023: 19:24:44</span>
+            </div>
+            <p>INDIA</p>
+            <p class="scr">95</p>
+          </div>
+          <div class="data2">
+            <div class="circle-div del">
+              <i class="fa-solid fa-trash-can"></i>
+            </div>
+            <div class="circle-div plus">+5</div>
+            <div class="circle-div minus">-5</div>
+          </div>
+        </div>
+        <div class="leaderboard-data">
+          <div class="data1">
+            <div>
+              <p>AKHIL SHARMA</p>
+              <span class="time">JAN 2023: 09:24:44</span>
+            </div>
+            <p>INDIA</p>
+            <p class="scr">85</p>
+          </div>
+          <div class="data2">
+            <div class="circle-div del">
+              <i class="fa-solid fa-trash-can"></i>
+            </div>
+            <div class="circle-div plus">+5</div>
+            <div class="circle-div minus">-5</div>
+          </div>
+        </div>
+        <div class="leaderboard-data">
+          <div class="data1">
+            <div>
+              <p>RAHUL SHARMA</p>
+              <span class="time">MAR 2023: 09:24:44</span>
+            </div>
+            <p>INDIA</p>
+            <p class="scr">70</p>
+          </div>
+          <div class="data2">
+            <div class="circle-div del">
+              <i class="fa-solid fa-trash-can"></i>
+            </div>
+            <div class="circle-div plus">+5</div>
+            <div class="circle-div minus">-5</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

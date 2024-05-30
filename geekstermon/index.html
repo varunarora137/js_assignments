@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>GeeksterMon</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>GeeksterMon</h1>
+      <form>
+        <div>
+          <select>
+            <option value="types">Types</option>
+            <option value="grass">Grass</option>
+            <option value="water">Water</option>
+            <option value="fire">Fire</option>
+            <option value="bug">Bug</option>
+            <option value="normal">Normal</option>
+            <option value="poison">Poison</option>
+            <option value="electric">Electric</option>
+            <option value="ground">Ground</option>
+            <option value="fairy">Fairy</option>
+            <option value="fighting">Fighting</option>
+            <option value="psychic">Psychic</option>
+            <option value="rock">Rock</option>
+            <option value="ghost">Ghost</option>
+            <option value="ice">Ice</option>
+            <option value="dragon">Dragon</option>
+          </select>
+          <input type="button" value="Filter by Type" class="filter" />
+          <input type="button" value="Reset" class="reset" />
+        </div>
+        <div>
+          <input type="text" placeholder="Enter Pokemon Name" class="text" />
+        </div>
+      </form>
+      <div class="poke-cards-container"></div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

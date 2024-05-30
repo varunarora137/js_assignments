@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+}
+.container {
+  width: 950px;
+  height: 100%;
+  margin: 0 auto;
+}
+h1 {
+  margin-top: 50px;
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+h1 .h1-first {
+  font-size: 48px;
+}
+h1 .h1-second {
+  font-size: 48px;
+}
+form {
+  width: 100%;
+}
+input[type="text"],
+input[type="number"] {
+  width: 185px;
+  height: 40px;
+  border: 1px solid #90ee90;
+  padding: 15px;
+  margin-right: 10px;
+  font-size: 16px;
+}
+input[type="text"]:focus,
+input[type="number"]:focus {
+  outline: 3px solid #008000;
+  border: none;
+}
+input[type="submit"] {
+  background-color: #90ee90;
+  width: 160px;
+  height: 40px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+.leaderboard-container {
+  margin-top: 30px;
+}
+.leaderboard-data {
+  height: 125px;
+  width: 100%;
+  background-color: #90ee90;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 15px;
+}
+.data1 {
+  width: 45%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.data2 {
+  width: 20%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.time {
+  font-size: 12px;
+  color: #686868;
+}
+.circle-div {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 16px;
+  cursor: pointer;
+}
+.required {
+  width: 100%;
+  text-align: center;
+  color: #ff7864;
+  margin-bottom: 30px;
+  font-weight: 600;
+  display: none;
+}
+.data1 > div {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}

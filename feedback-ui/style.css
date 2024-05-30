@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Trirong:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #e0ffff;
+  font-family: "Space Mono", monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  color: #006400;
+}
+.visible-container {
+  width: 440px;
+  height: 295px;
+  background-color: #e9ffff;
+  box-shadow: 0 0 7px grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+  padding-top: 5px;
+  border-radius: 7px;
+}
+.visible-container h2 {
+  font-size: 28px;
+}
+.emojis {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.emojis-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100px;
+  padding: 7px;
+  transition: 0.1s linear;
+  transition: border-radius 0.2s linear;
+}
+.emojis-container img {
+  width: 44%;
+}
+.btn {
+  padding: 13px 30px;
+  background-color: #008b8b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+.emojis-container:hover {
+  background-color: #8fbc8f;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.emojis-container-hover {
+  background-color: #8fbc8f;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.btn:hover {
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgb(19, 19, 19);
+}
+.btn:active {
+  transform: scale(0.97);
+}
+.hidden-container {
+  width: 440px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  padding-top: 5px;
+  border-radius: 7px;
+  box-shadow: 0 0 7px grey;
+  background-color: #e9ffff;
+  justify-content: space-around;
+}
+.hidden-container p {
+  font-size: 18px;
+  text-align: center;
+}
+.hidden-container {
+  display: none;
+}

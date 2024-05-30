@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Feedback UI</title>
+  </head>
+  <body>
+    <div class="visible-container">
+      <h2>Feedback UI</h2>
+      <div class="emojis">
+        <div class="emojis-container" id="1">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/166/166527.png"
+            alt="img"
+          />
+          <p>Unhappy</p>
+        </div>
+        <div class="emojis-container" id="2">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/1791/1791385.png"
+            alt="img"
+          />
+          <p>Neutral</p>
+        </div>
+        <div class="emojis-container" id="3">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/166/166538.png"
+            alt="img"
+          />
+          <p>Satisfied</p>
+        </div>
+      </div>
+      <button class="btn">Send Review</button>
+    </div>
+    <div class="hidden-container">
+      <h3 id="before-mood">Thank you!</h3>
+      <!-- <h3>Feedback: Unhappy</h3> -->
+      <p>We'll use your feedback to improve our customer support.</p>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
