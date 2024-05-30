@@ -15,30 +15,23 @@ add_btn.addEventListener("click", () => {
     temp_text.style.display = "none";
     const new_div = document.createElement("div");
     new_div.classList.add("notes");
+    new_div.classList.add("rotate");
     new_div.innerHTML = `<p>${str}</p> 
-    <button class="close">X</button>`;
+    <button class="close"><span class="close-X">X</span></button>`;
     new_div.style.backgroundColor = color.value;
     notes_container.append(new_div);
     text_area.value = "";
+    text_area.parentElement.classList.remove("scale");
+    void text_area.parentElement.offsetWidth;
+    text_area.parentElement.classList.add("scale");
   }
 });
 notes_container.addEventListener("click", (event) => {
-  console.log(event);
-  if (event.target.classList.contains("close")) {
-    const parentDiv = event.target.parentNode;
+  if (
+    event.target.classList.contains("close-X") ||
+    event.target.classList.contains("close")
+  ) {
+    const parentDiv = event.target.parentNode.parentNode;
     parentDiv.remove();
   }
 });
-
-/* close.forEach((closeButton) => {
-  closeButton.addEventListener("click", () => {
-    const parentDiv = closeButton.parentNode;
-    parentDiv.style.display = "none";
-  });
-});
- */
-/* close.addEventListener("click", () => {
-  const parent = close.parentNode;
-  parent.remove();
-});
- */

@@ -27,6 +27,8 @@ body {
   display: flex;
   align-items: center;
   gap: 30px;
+}
+.scale {
   animation: scale 0.5s;
 }
 textarea {
@@ -122,6 +124,8 @@ textarea {
 .container2 {
   width: 50%;
   height: 100%;
+  overflow: auto;
+  overflow-x: hidden;
 }
 .container2 h1,
 .temp-text {
@@ -144,15 +148,32 @@ textarea {
   position: relative;
   padding-left: 3px;
   padding-top: 15px;
+  padding-right: 25px;
 }
 .close {
   background-color: transparent;
-  border: none;
+  border: 1px solid black;
   outline: none;
   position: absolute;
-  right: 10px;
+  right: 5px;
   top: 5px;
   cursor: pointer;
-  width: 30px;
-  height: 30px;
+  width: 15px;
+  height: 15px;
+  background-color: red;
+}
+.close span {
+  position: relative;
+  bottom: 2px;
+}
+.rotate {
+  animation: rotate360 0.3s ease-out;
+}
+@keyframes rotate360 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
