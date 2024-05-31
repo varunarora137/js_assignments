@@ -12,6 +12,7 @@
   font-family: "Roboto Mono", monospace;
   padding: 60px 15px;
   overflow-x: hidden;
+  padding-left: 50px;
 }
 .container h1 {
   font-weight: 400;

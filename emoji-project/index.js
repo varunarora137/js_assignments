@@ -1,5 +1,3 @@
-import { emojiList } from "./emojiList.js";
-
 const text_search = document.querySelector(".txt");
 const search_btn = document.querySelector(".srch");
 
