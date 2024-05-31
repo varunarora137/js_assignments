@@ -201,3 +201,10 @@ input[type="submit"]:active {
     transform: translateX(0px);
   }
 }
+.lead-1,
+.lead-3 {
+  animation: fromright 0.3s linear;
+}
+.lead-2 {
+  animation: fromleft 0.3s linear;
+}

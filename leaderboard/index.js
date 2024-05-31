@@ -98,6 +98,7 @@ function sortContainer() {
     return num2 - num1;
   });
   sortedData.forEach((el, index) => {
+    el.classList.remove("lead-1", "lead-2", "lead-3");
     el.children[0].classList.remove(
       "rank-img-gold",
       "rank-img-silver",
