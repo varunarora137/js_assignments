@@ -55,6 +55,8 @@ form {
   font-size: 21px;
   align-items: center;
   flex-wrap: wrap;
+  border-radius: 15px;
+  background-color: rgb(66, 62, 70);
 }
 .img-title {
   width: 55%;
@@ -77,4 +79,26 @@ form {
 .emojee-line {
   border-top: 1px solid rgba(255, 255, 255, 0.17);
   width: 100%;
+}
+.animation-left {
+  animation: fromleft 0.3s linear;
+}
+@keyframes fromleft {
+  0% {
+    transform: translateX(-600px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+.animation-right {
+  animation: fromright 0.3s linear;
+}
+@keyframes fromright {
+  0% {
+    transform: translateX(600px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
 }
