@@ -7,16 +7,22 @@ const required = document.querySelector(".required");
 const plus = document.querySelectorAll(".plus");
 const minus = document.querySelectorAll(".minus");
 const del = document.querySelectorAll(".del");
+let ct = 0;
+
+setTimeout(
+  () => (document.querySelector("h1").style.visibility = "visible"),
+  500
+);
 
 activateBtns();
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const first_name = document.querySelector(".first-name").value;
-  const last_name = document.querySelector(".last-name").value;
-  const country = document.querySelector(".country").value;
-  const score = document.querySelector(".score").value;
+  let first_name = document.querySelector(".first-name").value;
+  let last_name = document.querySelector(".last-name").value;
+  let country = document.querySelector(".country").value;
+  let score = document.querySelector(".score").value;
   const date = new Date();
 
   if (first_name === "" || last_name === "" || country === "" || score === "")
@@ -25,7 +31,10 @@ form.addEventListener("submit", (e) => {
   required.style.display = "none";
   const new_div = document.createElement("div");
   new_div.classList.add("leaderboard-data");
-  new_div.innerHTML = `<div class="data1">
+  if (ct % 2 === 0) new_div.classList.add("animation-left");
+  else new_div.classList.add("animation-right");
+  new_div.innerHTML = `<div class="rank"></div>
+          <div class="data1">
             <div>
               <p>${first_name} ${last_name}</p>
               <span class="time">${generateDateAndTime()}</span>
@@ -39,8 +48,18 @@ form.addEventListener("submit", (e) => {
             <div class="circle-div minus">-5</div>
           </div>`;
   leadearboard_container.append(new_div);
+
+  document.querySelector(".first-name").value = "";
+  document.querySelector(".last-name").value = "";
+  document.querySelector(".country").value = "";
+  document.querySelector(".score").value = "";
+
+  setTimeout(() => {
+    new_div.classList.remove("animation-left", "animation-right");
+  }, 300);
   sortContainer();
   activateBtns();
+  ct++;
 });
 
 function activateBtns() {
@@ -74,11 +93,26 @@ function sortContainer() {
   let arrElements = [];
   leaderboard_data.forEach((el) => arrElements.push(el));
   let sortedData = arrElements.slice().sort((a, b) => {
-    const num1 = a.children[0].children[2].textContent;
-    const num2 = b.children[0].children[2].textContent;
+    const num1 = a.children[1].children[2].textContent;
+    const num2 = b.children[1].children[2].textContent;
     return num2 - num1;
   });
-  sortedData.forEach((el) => leadearboard_container.append(el));
+  sortedData.forEach((el, index) => {
+    el.children[0].classList.remove(
+      "rank-img-gold",
+      "rank-img-silver",
+      "rank-img-bronze",
+      "rank-text"
+    );
+    if (index === 0) el.children[0].classList.add("rank-img-gold");
+    else if (index === 1) el.children[0].classList.add("rank-img-silver");
+    else if (index === 2) el.children[0].classList.add("rank-img-bronze");
+    else {
+      el.children[0].classList.add("rank-text");
+      el.children[0].innerText = `${index + 1}.`;
+    }
+    leadearboard_container.append(el);
+  });
 }
 
 function generateDateAndTime() {
