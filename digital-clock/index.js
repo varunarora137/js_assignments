@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     hour.innerText = `${String(hours).padStart(2, "0")}`;
     minute.innerHTML = `${String(minutes).padStart(2, "0")}`;
     second.innerText = `${String(seconds).padStart(2, "0")}`;
-    night.innerText = `${pm && "PM"}`;
+    night.innerText = `${pm ? "PM" : "AM"}`;
 
     const secOffset = 1075 - seconds * 17.9; // 1075/60=17.9
     line3.style.strokeDashoffset = secOffset;
