@@ -208,3 +208,8 @@ input[type="submit"]:active {
 .lead-2 {
   animation: fromleft 0.3s linear;
 }
+.data1 p,
+.data2 p,
+.data3 p {
+  text-align: center;
+}
