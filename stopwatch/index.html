@@ -14,18 +14,24 @@
     <div class="container">
       <div class="time">
         <div class="minutes">00</div>
-        <div>:</div>
+        <div id="colon">:</div>
         <div class="seconds">00</div>
-        <div>:</div>
+        <div id="colon">:</div>
         <div class="miliseconds">00</div>
       </div>
       <div class="buttons">
         <div class="circle circle1"><i class="fa-solid fa-play"></i></div>
         <div class="circle circle2"><i class="fa-solid fa-pause"></i></div>
-        <div class="circle circle3"><i class="fa-solid fa-stop"></i></div>
-        <div class="circle circle4"><i class="fa-solid fa-flag"></i></div>
+        <div class="circle circle3 disabled">
+          <i class="fa-solid fa-stop"></i>
+        </div>
+        <div class="circle circle4 disabled">
+          LAP <i class="fa-solid fa-flag"></i>
+        </div>
+        <div class="circle circle5 disabled"><i class="fas fa-undo"></i></div>
       </div>
       <div class="lap-time"></div>
+      <div class="share">SHARE</div>
     </div>
     <script src="index.js"></script>
   </body>
