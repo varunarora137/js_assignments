@@ -1,0 +1,79 @@
+@font-face {
+  font-family: "MyFont";
+  src: url("./DS-DIGI.TTF") format("opentype");
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow-y: hidden;
+  background-color: #292e34;
+}
+.circle {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  box-shadow: 0 0 100px black;
+}
+.circle svg {
+  transform: rotate(-90deg);
+}
+.line-1 {
+  stroke: #0bfcfc;
+  stroke-width: 3;
+  fill: none;
+  stroke-dasharray: 1538;
+  stroke-dashoffset: 1538;
+  transition: stroke-dashoffset 1s linear;
+}
+.fill-1 {
+  fill: #020015;
+}
+.svg-2 {
+  position: absolute;
+  right: 36px;
+  top: 36px;
+}
+.line-2 {
+  stroke: #0bfcfc;
+  stroke-width: 3;
+  fill: none;
+  stroke-dasharray: 1306;
+  stroke-dashoffset: 1306;
+  transition: stroke-dashoffset 1s linear;
+}
+.fill-2 {
+  fill: #111616;
+}
+.svg-3 {
+  position: absolute;
+  right: 75px;
+  top: 75px;
+}
+.line-3 {
+  stroke: #0bfcfc;
+  stroke-width: 3;
+  fill: none;
+  stroke-dasharray: 1075;
+  stroke-dashoffset: 1075;
+  transition: stroke-dashoffset 1s linear;
+}
+.fill-3 {
+  fill: #092c2e;
+}
+
+.time-display {
+  font-family: "MyFont", sans-serif;
+  color: #0bfcfc;
+  font-size: 80px;
+  position: absolute;
+  top: 41%;
+  left: 20%;
+}
+.night {
+  font-size: 35px;
+  margin-left: 10px;
+}
