@@ -82,15 +82,22 @@ cardClick();
 place_order.addEventListener("click", () => {
   main.style.display = "none";
   processing.style.display = "block";
-  setTimeout(() => {
-    processing.style.display = "none";
-    order_placed.style.display = "block";
-    count = 0;
-    cart_txt.innerText = count;
-    let id = orderIDGenerator();
-    order_id.innerText = id;
-    displayCartItems();
-  }, 2500);
+
+  let prom = new Promise((res, rej) => {
+    setTimeout(() => res("resolved"), 2500);
+  });
+
+  prom
+    .then(() => {
+      processing.style.display = "none";
+      order_placed.style.display = "block";
+      count = 0;
+      cart_txt.innerText = count;
+      let id = orderIDGenerator();
+      order_id.innerText = id;
+      displayCartItems();
+    })
+    .catch(() => console.log("Error"));
 });
 
 order_placed_button.addEventListener("click", () => {
