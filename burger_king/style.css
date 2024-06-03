@@ -1,0 +1,346 @@
+@import url("https://fonts.googleapis.com/css2?family=Flamenco:wght@300;400&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  /* height: 100vh; */
+  background-color: #f7f3ed;
+  overflow-x: hidden;
+}
+.header {
+  height: 75px;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  font-family: "Flamenco", system-ui;
+  background-color: white;
+  padding: 0 50px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  border-bottom: 1px solid black;
+}
+.logo img {
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+}
+.logo-circle {
+  position: relative;
+  top: 5px;
+  width: 80px;
+  cursor: pointer;
+  height: 80px;
+  border-radius: 50%;
+  background-color: white;
+}
+.dinein {
+  display: flex;
+  align-items: center;
+  color: #828282;
+  font-weight: 900;
+  gap: 10px;
+  font-size: 18px;
+  position: relative;
+}
+.dinein p {
+  cursor: pointer;
+}
+.dinein input[type="search"] {
+  height: 35px;
+  width: 240px;
+  border-radius: 20px;
+  outline: none;
+  background-color: #fbfaf8;
+  border: 1px solid #c3c1bf;
+  cursor: pointer;
+}
+.toggle {
+  height: 25px;
+  width: 50px;
+  background-color: #ee7700;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.circle {
+  height: 23px;
+  position: relative;
+  top: 1px;
+  width: 23px;
+  border-radius: 50%;
+  transform: translateX(25px);
+  background-color: white;
+}
+.inner-text {
+  position: absolute;
+  left: 345px;
+  color: black;
+  font-family: sans-serif;
+  font-size: 11px;
+}
+.inner-text img {
+  margin-right: 10px;
+}
+.del {
+  color: #ee7700;
+}
+.line {
+  height: 35px;
+  width: 2px;
+  background-color: rgb(208, 204, 204);
+}
+.login-part {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: #828282;
+  font-weight: bolder;
+  font-size: 18px;
+}
+.login-part p img {
+  margin-right: 5px;
+  position: relative;
+  top: 2px;
+  cursor: pointer;
+}
+.login-part p {
+  cursor: pointer;
+}
+.search {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+main {
+  background-color: #f7f3ed;
+  width: 1200px;
+  margin: 30px auto;
+  /* margin-bottom: 50px; */
+}
+main .buttons button {
+  padding: 5px 20px;
+  background-color: #f7e9da;
+  color: #ee7700;
+  border: 1px solid #ee7700;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.all {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.card {
+  height: 370px;
+  width: 270px;
+  background-color: #ffffff;
+  margin: 30px 0;
+  border-radius: 8px;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+}
+.add {
+  color: #ee7700;
+  border: 1px solid #ee7700;
+  padding: 3px 0;
+  width: 90px;
+  background-color: white;
+  font-size: 15px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.quantity {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  display: none;
+}
+.card > img {
+  width: 240px;
+}
+.veg-image {
+  width: 15px;
+  position: relative;
+  position: absolute;
+  right: 15px;
+  top: 160px;
+}
+.heading-div h1 {
+  font-size: 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.desc-div {
+  font-size: 14px;
+}
+.price {
+  display: flex;
+  justify-content: space-between;
+}
+.place-order button {
+  font-size: 20px;
+  padding: 10px 25px;
+  background-color: green;
+  outline: none;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.1s ease-in-out;
+}
+.place-order {
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  display: none;
+}
+.place-order button:hover {
+  scale: 1.1;
+}
+.place-order button:active {
+  scale: 0.9;
+}
+.combos {
+  border-bottom: 1px solid rgb(212, 208, 208);
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.combos div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+.combos img {
+  width: 80px;
+}
+.cart-img {
+  position: relative;
+}
+.cart-txt {
+  width: 20px;
+  border-radius: 50%;
+  height: 20px;
+  border: none;
+  background-color: #ee7700;
+  position: absolute;
+  bottom: 10px;
+  left: 62px;
+}
+
+.processing {
+  margin: 230px 720px;
+}
+.processing img {
+  width: 100px;
+  height: 100px;
+}
+
+.order-placed .txts {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+.order-placed .txts p:nth-child(1) {
+  color: orangered;
+  font-size: 48px;
+  padding-top: 50px;
+  padding-left: 135px;
+  animation: blink 2s ease-in-out infinite;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+@keyframes blink {
+  0% {
+    color: orangered;
+  }
+  100% {
+    color: rgb(23, 8, 2);
+  }
+}
+.order-placed .txts p:nth-child(2) {
+  color: rgb(10, 10, 9);
+  font-size: 25px;
+  padding-right: 10px;
+}
+.order-imgs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  width: 1200px;
+  margin: 0 auto;
+}
+.go-back {
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+}
+.go-back button:hover {
+  scale: 1.1;
+}
+.go-back button:active {
+  scale: 0.9;
+}
+.go-back button {
+  font-size: 20px;
+  padding: 10px 25px;
+  background-color: green;
+  outline: none;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.1s ease-in-out;
+}
+.order-placed {
+  display: none;
+}
+.processing {
+  display: none;
+}
+
+.order-img-item {
+  margin-top: 60px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 200px;
+  background-color: white;
+  border-radius: 10px;
+  position: relative;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+.order-img-item p {
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+}
+.order-img-item img:nth-child(1) {
+  position: static;
+  width: 200px;
+}
+.order-img-item img:last-child {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  width: 15px;
+}
+.quantity {
+  font-size: 20px;
+  display: none;
+}
+.quantity span {
+  width: 20px;
+}
+.total_quant {
+  font-style: italic;
+  color: midnightblue;
+}
