@@ -16,6 +16,11 @@ async function apiFetch(phone) {
     `https://openapi.programming-hero.com/api/phones?search=${phone}`
   );
   const phone_data = await fetch_data.json();
+  if (!phone_data.status) {
+    phone_container.innerHTML =
+      "<div style='margin:0 auto; padding-top:100px; font-size:50px; color:white; '>No result found</div>";
+    return "exit";
+  }
   return phone_data.data;
 }
 
@@ -24,6 +29,7 @@ search.addEventListener("click", () => renderPhone(input_txt.value));
 async function renderPhone(str = "13") {
   show_all.style.display = "none";
   const arr = await apiFetch(str);
+  if (arr === "exit") return;
   let count = 0;
   phone_container.innerHTML = "";
 
