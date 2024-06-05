@@ -5,22 +5,26 @@ const phone_details = document.querySelectorAll(".phone-details");
 const show_all = document.querySelector(".show-all");
 const opacity_div = document.querySelector(".opacity_div");
 const dialog = document.querySelector("dialog");
+const processing = document.querySelector(".processing");
 let phone_slug = "";
 
 async function apiFetch(phone) {
+  phone_container.innerHTML =
+    "<div class='processing'> <img src='https://cdn.pixabay.com/animation/2022/07/29/03/42/03-42-18-223_512.gif' alt='processing'/> </div>";
+
   const fetch_data = await fetch(
     `https://openapi.programming-hero.com/api/phones?search=${phone}`
   );
   const phone_data = await fetch_data.json();
-  // phone_slug=
   return phone_data.data;
 }
 
 search.addEventListener("click", () => renderPhone(input_txt.value));
 
 async function renderPhone(str = "13") {
-  let count = 0;
+  show_all.style.display = "none";
   const arr = await apiFetch(str);
+  let count = 0;
   phone_container.innerHTML = "";
 
   for (let i = 0; i < arr.length; i++) {
@@ -44,15 +48,15 @@ async function renderPhone(str = "13") {
     for (let i = 12; i < arr.length; i++) {
       let e = arr[i];
       const div = `<div class="phone" data-slug=${e.slug}>
-    <div class="img-div"><img src=${e.image} alt="img"/></div>
-    <h3>${e.phone_name}</h3>
-    <p>There are many variations of passages of available, but the
-              majority have suffered</p>
-    <button class="details">SHOW DETAILS</button></div>`;
+      <div class="img-div"><img src=${e.image} alt="img"/></div>
+      <h3>${e.phone_name}</h3>
+      <p>There are many variations of passages of available, but the
+      majority have suffered</p>
+      <button class="details">SHOW DETAILS</button></div>`;
       phone_container.innerHTML += div;
     }
-    detailFetch();
     show_all.style.display = "none";
+    detailFetch();
   });
 }
 renderPhone();

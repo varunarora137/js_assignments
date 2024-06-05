@@ -150,9 +150,9 @@ body {
   margin-right: 8px;
 }
 .processing {
-  display: none;
   position: relative;
   top: 100px;
+  margin: 0 auto;
 }
 .processing img {
   width: 50px;
