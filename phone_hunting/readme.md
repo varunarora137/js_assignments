@@ -29,4 +29,4 @@ The Phone Details Viewer is a web application designed to display detailed infor
 
 
 ## Link
-[Hosted Link](https://varunarora137.github.io/js_assignments/phone_hunting/index.html)
+[Hosted Link]("https://varunarora137.github.io/js_assignments/phone_hunting/index.html")
