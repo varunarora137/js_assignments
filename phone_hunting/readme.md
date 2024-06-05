@@ -8,8 +8,6 @@ The Phone Details Viewer is a web application designed to display detailed infor
 
 - **View Details**: Click on a phone card to view detailed information about the phone.
 
-- **Pagination**: Use the "Next" and "Previous" buttons to navigate through the phone data.
-
 - **Show All**: Click the "Show All" button to view all available phones and their details.
 
 ## Features
