@@ -77,6 +77,7 @@ function detailFetch() {
       );
       const api_data = await api.json();
 
+      document.body.classList.add("no-scroll");
       opacity_div.style.display = "block";
       opacity_div.innerHTML = `<dialog open class="phone-details">
             <img
@@ -103,6 +104,7 @@ function detailFetch() {
 
       opacity_div.querySelector(".close").addEventListener("click", () => {
         opacity_div.style.display = "none";
+        document.body.classList.remove("no-scroll");
       });
     });
   });

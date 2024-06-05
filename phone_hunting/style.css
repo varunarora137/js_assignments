@@ -268,3 +268,6 @@ dialog {
 .footer i {
   cursor: pointer;
 }
+.no-scroll {
+  overflow: hidden;
+}
