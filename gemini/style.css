@@ -289,6 +289,7 @@ main {
   background-color: #1e1f20;
   padding: 20px 20px;
   font-size: 16px;
+  color: #bdc1bc;
 }
 ::placeholder {
   color: #bdc1bc;
@@ -333,4 +334,175 @@ a {
 
 a:visited {
   color: #bdc1bc;
+}
+
+.content-ans {
+  width: 730px;
+  height: 100%;
+  margin: 20px auto;
+  padding-left: 10px;
+}
+.ques {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.ques .circle {
+  width: 35px;
+  height: 35px;
+  background-image: url("https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQTFj2RM4yN7WFIcR0-Coe-YNpxhBiFNU349n9DbMPx0LMaNQC1TFeKix3vUV8HT6FYOi40Q3inqSio15QfgB6s7IZ-3Gzv2vFJbk336tD9OoYsY1lWeKvZWr5os3RmyCF6BuztGNK-XQ_Jn7hdQNREXL.jpg?r=eb4");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.ques p {
+  font-size: 17px;
+  color: #d6e3e3;
+}
+
+.speaker {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  justify-content: flex-end;
+  margin-top: 15px;
+  width: 100%;
+}
+.speaker button {
+  padding: 10px 7px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  border-radius: 7px;
+  color: #e3e3e3;
+  cursor: pointer;
+  outline: none;
+}
+.speaker button > i {
+  color: #a8c8fa;
+  margin-left: 5px;
+}
+.speaker div {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border-radius: 50%;
+}
+.speaker div > i {
+  color: #e3e3e3;
+  font-size: 20px;
+  margin: 10px 8px 10px;
+}
+.speaker div:hover,
+.speaker button:hover {
+  background-color: #2f3030;
+}
+.ans-icon {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  gap: 20px;
+  color: #e3e3e3;
+  font-size: 17px;
+  line-height: 1.5;
+}
+.ans-icon .gemini-icon img {
+  width: 32px;
+}
+.ans {
+  padding-right: 40px;
+}
+.various-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 40px;
+  padding-left: 50px;
+}
+.outer-circle-icon {
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  background-color: transparent;
+  border-radius: 50%;
+  color: #e3e3e3;
+  padding: 3px 6px;
+  cursor: pointer;
+}
+.three-dots {
+  padding-left: 13px;
+}
+.outer-circle-icon:hover {
+  background-color: #2f3030;
+}
+
+.gemini-dropdown-div {
+  position: relative;
+}
+.gemini-dropdown {
+  position: absolute;
+  width: 265px;
+  height: 110px;
+  background-color: #282a2c;
+  z-index: 2;
+  border-radius: 7px;
+  padding-top: 8px;
+}
+.gemini-dropdown div img {
+  width: 20px;
+  height: 20px;
+}
+.gemini-dropdown div {
+  display: flex;
+  cursor: pointer;
+  height: 50px;
+  align-items: center;
+  padding-left: 20px;
+  color: #dadada;
+  gap: 10px;
+}
+.fa-check {
+  margin-left: 120px;
+}
+.gem-adv {
+  opacity: 0.4;
+}
+.gemini-dropdown button {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #1b1b1b;
+  border: none;
+  outline: none;
+  color: white;
+}
+.gemini-dropdown div:first-child:hover {
+  background-color: #393b3d;
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #131314;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #80868b;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.content-ans {
+  display: none;
+}
+.gemini-dropdown {
+  display: none;
 }
