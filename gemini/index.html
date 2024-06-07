@@ -39,46 +39,65 @@
               Gemini<i class="fa fa-caret-down" aria-hidden="true"></i>
             </button>
           </div>
-          <div>
-            <button>Try Gemini Advanced</button>
-            <i class="fa fa-th" aria-hidden="true"></i>
-            <div class="circle"></div>
+          <div class="header-2">
+            <button class="advanced">
+              <img
+                src="https://www.gstatic.com/lamda/images/gemini_sparkle_red_4ed1cbfcbc6c9e84c31b987da73fc4168aec8445.svg"
+              />Try Gemini Advanced
+            </button>
+            <button class="menu">
+              <i class="fas fa-th"></i>
+            </button>
+            <div class="circle-outer"><div class="circle"></div></div>
           </div>
         </div>
-        <div class="content-main">
-          <h1>Hello, Varun</h1>
-          <h1>How can I help you today?</h1>
-          <div class="div-boxes">
-            <div class="box">
-              <p>Help me write a refund email for a product that's damaged</p>
-              <i class="fa-solid fa-pen"></i>
+        <div class="content-main-outer">
+          <div class="content-main">
+            <h1 class="gradient-text">Hello, Varun</h1>
+            <h1>How can I help you today?</h1>
+            <div class="div-boxes">
+              <div class="box">
+                <p>Help me write a refund email for a product that's damaged</p>
+                <div class="i-circle"><i class="fa-solid fa-pen"></i></div>
+              </div>
+              <div class="box">
+                <p>Provide questions to help me prepare for an interview</p>
+                <div class="i-circle"><i class="fa-solid fa-pen"></i></div>
+              </div>
+              <div class="box">
+                <p>What's the reaction to and impact of autonomous vehicles</p>
+                <div class="i-circle">
+                  <i class="fa-solid fa-lightbulb"></i>
+                </div>
+              </div>
+              <div class="box">
+                <p>Create a list of power phrases for my resume</p>
+                <div class="i-circle"><i class="fa-solid fa-compass"></i></div>
+              </div>
             </div>
-            <div class="box">
-              <p>Provide questions to help me prepare for an interview</p>
-              <i class="fa-solid fa-pen"></i>
+            <div class="content-footer">
+              <div class="content-footer-content">
+                Humans review some saved chats to improve Google AI. To stop
+                this for future chats, turn off Gemini Apps activity. If this
+                setting is on, don't enter info that you wouldn't want reviewed
+                or used.
+                <a href="">How it works</a>
+                <button class="activity-btn">Manage activity</button
+                ><button class="dismiss">Dismiss</button>
+              </div>
             </div>
-            <div class="box">
-              <p>What's the reaction to and impact of autonomous vehicles</p>
-              <i class="fa-solid fa-lightbulb"></i>
-            </div>
-            <div class="box">
-              <p>Create a list of power phrases for my resume</p>
-              <i class="fa-solid fa-compass"></i>
-            </div>
-          </div>
-          <div class="content-footer">
-            Humans review some saved chats to improve Google AI. To stop this
-            for future chats, turn off Gemini Apps activity. If this setting is
-            on, don't enter info that you wouldn't want reviewed or used.
-            <a href="">How it works</a>
-            <button class="activity">Manage activity</button
-            ><button class="dismiss">Dismiss</button>
           </div>
         </div>
         <div class="footer">
           <input type="text" placeholder="Enter a prompt here" />
-          <button class="gallery"><i class="fa-solid fa-image"></i></button
-          ><button class="mic"><i class="fa-solid fa-microphone"></i></button>
+          <button class="gallery" id="gallery">
+            <i class="fa-solid fa-image"></i></button
+          ><button class="mic" id="mic">
+            <i class="fa-solid fa-microphone"></i>
+          </button>
+          <button class="send" id="send">
+            <i class="fa fa-paper-plane" aria-hidden="true"></i>
+          </button>
           <p>
             Gemini may display inaccurate info, including about people, so
             double-check its responses.

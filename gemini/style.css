@@ -9,4 +9,328 @@
 }
 body {
   font-family: "MyFont", sans-serif;
+  overflow: hidden;
+}
+.conatiner {
+  display: flex;
+}
+aside {
+  width: 68px;
+  height: 100vh;
+  background-color: #1e1f20;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+aside .head {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  gap: 45px;
+  align-items: center;
+}
+.bars {
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+.plus {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: #1a1a1c;
+  color: #666667;
+  cursor: pointer;
+  font-size: 32px;
+}
+aside .foot {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 35px;
+  /* gap: 8px; */
+  align-items: center;
+}
+.foot .help,
+.foot .activity,
+.foot .setting {
+  cursor: pointer;
+  color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  font-size: 17px;
+  border: none;
+  color: white;
+  background-color: transparent;
+}
+.head .plus:hover,
+.head .bars:hover,
+.foot .help:hover,
+.foot .activity:hover,
+.foot .setting:hover {
+  background-color: #2f3030;
+}
+main {
+  width: calc(100vw - 68px);
+  height: 100vh;
+  background-color: #131314;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 15px;
+}
+.header .gemini {
+  margin: 5px;
+  height: 35px;
+  width: 100px;
+  background-color: transparent;
+  border: none;
+  color: #beccce;
+  border-radius: 5px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 0 10px;
+}
+.header .gemini i {
+  font-size: 15px;
+  color: white;
+}
+.header .gemini:active {
+  background-color: #2f3030;
+}
+.header .advanced {
+  width: 180px;
+  height: 35px;
+  border-radius: 10px;
+  border: none;
+  background-color: #47494a;
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+.header .header-2 {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.header .advanced img {
+  color: #d45d6a;
+  height: 15px;
+  width: 15px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.header .advanced:hover {
+  background-color: #717373;
+}
+.menu {
+  width: 35px;
+  height: 35px;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  color: white;
+  font-size: 18px;
+}
+.menu:hover {
+  background-color: #2f3030;
+}
+.header .circle-outer {
+  width: 45px;
+  height: 45px;
+  background-color: transparent;
+  border-radius: 50%;
+}
+.header .circle {
+  margin: 5px auto;
+  width: 35px;
+  height: 35px;
+  background-image: url("https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQTFj2RM4yN7WFIcR0-Coe-YNpxhBiFNU349n9DbMPx0LMaNQC1TFeKix3vUV8HT6FYOi40Q3inqSio15QfgB6s7IZ-3Gzv2vFJbk336tD9OoYsY1lWeKvZWr5os3RmyCF6BuztGNK-XQ_Jn7hdQNREXL.jpg?r=eb4");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  margin-right: 5px;
+  cursor: pointer;
+}
+.header .circle-outer:hover {
+  background-color: #2f3030;
+}
+.content-main-outer {
+  width: 100%;
+  height: 75vh;
+  overflow-y: auto;
+}
+.content-main {
+  padding-top: 4vh;
+  width: 830px;
+  background-color: transparent;
+  margin: 0 auto;
+  height: 75vh;
+}
+.content-main h1 {
+  font-size: 55px;
+  color: #3c3f3e;
+}
+.gradient-text {
+  background: linear-gradient(to right, #5082ee 0%, #a66fba 10%, #c84153 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+.content-main h1:nth-child(2) {
+  margin-bottom: 75px;
+}
+.div-boxes {
+  display: flex;
+  justify-content: space-between;
+}
+.div-boxes .box {
+  height: 200px;
+  width: 200px;
+  border-radius: 10px;
+  background-color: #1e1f20;
+  padding: 15px;
+  color: #e3e3d8;
+  font-size: 17px;
+  cursor: pointer;
+  position: relative;
+}
+.box .i-circle {
+  position: absolute;
+  right: 10px;
+  bottom: 15px;
+  width: 40px;
+  height: 40px;
+  background-color: #131314;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.i-circle i {
+  margin: 12px 12px;
+}
+.box:nth-child(3) i {
+  margin: 12px 14px;
+}
+.div-boxes .box:hover {
+  background-color: #3d3f40;
+}
+.content-footer {
+  width: 100%;
+  height: 165px;
+}
+.content-footer-content {
+  margin: 20px 0 40px 0;
+  line-height: 1.5;
+  width: 100%;
+  height: 125px;
+  border-radius: 15px;
+  background-color: #1b1b1b;
+  padding: 15px 25px;
+  font-size: 17px;
+  color: #d3e3fd;
+  position: relative;
+  margin-bottom: 40px;
+}
+.content-footer button {
+  background-color: transparent;
+  border: none;
+  padding: 10px 8px;
+  border-radius: 20px;
+  cursor: pointer;
+  color: #a8c7fa;
+  font-size: 15px;
+}
+.activity-btn {
+  position: absolute;
+  bottom: 15px;
+  right: 90px;
+}
+.content-footer a,
+.content-footer a:visited {
+  color: #d3e3fd;
+}
+.dismiss {
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+}
+.content-footer button:hover {
+  background-color: #202731;
+}
+.footer {
+  width: 840px;
+  height: 105px;
+  margin: 0 auto;
+  position: relative;
+  padding-right: 12px;
+}
+.footer input[type="text"] {
+  height: 65px;
+  width: 100%;
+  border-radius: 40px;
+  outline: none;
+  border: none;
+  background-color: #1e1f20;
+  padding: 20px 20px;
+  font-size: 16px;
+}
+::placeholder {
+  color: #bdc1bc;
+}
+.footer button {
+  height: 50px;
+  width: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  border: none;
+  color: white;
+  font-size: 18px;
+  position: absolute;
+  cursor: pointer;
+  top: 8px;
+  right: 20px;
+}
+#gallery {
+  /* right: 120px; */
+  right: 65px;
+}
+/* #mic {
+  right: 65px;
+} */
+#send {
+  display: none;
+}
+.footer button:hover {
+  background-color: #2f3030;
+}
+.footer p {
+  font-size: 12px;
+  color: #bdc1bc;
+  margin: 10px auto;
+  width: max-content;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #bdc1bc;
 }
