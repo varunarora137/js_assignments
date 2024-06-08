@@ -337,9 +337,9 @@ a:visited {
 
 .content-ans {
   width: 730px;
-  height: 100%;
   margin: 20px auto;
   padding-left: 10px;
+  margin-bottom: 80px;
 }
 .ques {
   display: flex;
@@ -499,9 +499,9 @@ a:visited {
   background: #555;
 }
 
-.content-ans {
+/* .content-ans {
   display: none;
-}
+} */
 .gemini-dropdown {
   display: none;
 }
