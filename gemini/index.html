@@ -13,11 +13,13 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
     <title>Gemini</title>
   </head>
   <body>
     <div class="conatiner">
-      <aside>
+      <aside class="normal-aside">
         <div class="head">
           <button class="bars"><i class="fa-solid fa-bars"></i></button>
           <button class="plus">+</button>
@@ -30,6 +32,34 @@
           ><button class="setting">
             <i class="fa fa-cog" aria-hidden="true"></i>
           </button>
+        </div>
+      </aside>
+      <aside class="aside-modified" id="aside-modified">
+        <div class="head-modified">
+          <button class="bars-modified">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <button class="plus-modified">+<span>New chat</span></button>
+        </div>
+        <div class="foot-modified">
+          <button class="help-modified">
+            <i class="fa fa-question-circle" aria-hidden="true"></i
+            ><span>Help</span></button
+          ><button class="activity-modified">
+            <i class="fa fa-history" aria-hidden="true"></i
+            ><span>Activity</span></button
+          ><button class="setting-modified">
+            <i class="fa fa-cog" aria-hidden="true"></i><span>Settings</span>
+          </button>
+          <div class="loc-modified">
+            <div class="online"><i class="fa-solid fa-circle"></i></div>
+            <div class="loc-txt">
+              <p>South Satya Niketan, Satya Niketan,</p>
+              <p>Delhi, India</p>
+              <p class="blue-txt">Based on your places (home) • Update</p>
+              <p class="blue-txt">location</p>
+            </div>
+          </div>
         </div>
       </aside>
       <main>
@@ -105,7 +135,9 @@
           <div class="content-ans">
             <div class="ques">
               <div class="circle"></div>
-              <p>what is css</p>
+              <p class="ques-txt">
+                <!-- what is css -->
+              </p>
             </div>
             <div class="speaker">
               <button>Show drafts<i class="fa-solid fa-caret-down"></i></button>
@@ -116,10 +148,10 @@
                 <img src="images/google-gemini-icon.png" alt="gemini" />
               </div>
               <div class="ans">
-                CSS stands for Cascading Style Sheets. It's a language
+                <!-- CSS stands for Cascading Style Sheets. It's a language
                 specifically designed to style and layout web pages. Imagine it
                 as the instructions that tell a web browser how to display the
-                content written in HTML. Here's a breakdown of what CSS does:
+                content written in HTML. Here's a breakdown of what CSS does: -->
               </div>
             </div>
             <div class="various-icons">
@@ -143,7 +175,11 @@
           </div>
         </div>
         <div class="footer">
-          <input type="text" placeholder="Enter a prompt here" />
+          <input
+            type="text"
+            class="type-ques"
+            placeholder="Enter a prompt here"
+          />
           <button class="gallery" id="gallery">
             <i class="fa-solid fa-image"></i></button
           ><button class="mic" id="mic">
@@ -167,6 +203,6 @@
         }
       }
     </script>
-    <script type="module" src="index.js"></script>
+    <script type="module" src="index.js" defer></script>
   </body>
 </html>
