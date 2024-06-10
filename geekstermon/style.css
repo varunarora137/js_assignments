@@ -6,25 +6,37 @@
 }
 body {
   overflow-x: hidden;
+  background-color: #eff3ff;
 }
 .container {
   width: 96vw;
   margin: 0 auto;
 }
-.container h1 {
+.container div:first-child {
+  margin-bottom: 20px;
+}
+.header {
+  display: flex;
+  align-items: center;
+}
+.container .heading {
   margin: 40px auto;
-  font-size: 70px;
-  font-family: "Grandstander", cursive;
-  color: #555555;
-  text-align: center;
+}
+.gif {
+  position: relative;
+  right: 20%;
+  top: 35px;
 }
 .container form {
   text-align: center;
   margin-bottom: 30px;
 }
-.container div:first-child {
+.forms {
   margin: 0 0 10px 0;
+  position: relative;
+  right: 60px;
 }
+
 input {
   padding: 0 4px;
 }
@@ -32,7 +44,27 @@ input {
   font-size: 12px;
 }
 input[type="text"] {
-  width: 140px;
+  width: 200px;
+  height: 38px;
+  border-radius: 9px;
+  border: none;
+  outline: none;
+  margin-left: 25px;
+  margin-right: 5px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.5);
+}
+select {
+  width: 200px;
+  height: 38px;
+  border-radius: 9px;
+  border: none;
+  outline: none;
+  margin-left: 25px;
+  cursor: pointer;
+  margin-right: 5px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.5);
 }
 .poke-cards-container {
   width: 96vw;
@@ -43,15 +75,14 @@ input[type="text"] {
   margin-bottom: 20px;
 }
 .poke-card-frame {
-  width: 200px;
-  height: 275px;
+  width: 250px;
+  height: 350px;
 }
 .poke-card {
   width: 100%;
   position: relative;
   height: 100%;
   border-radius: 10px;
-  background-color: pink;
   box-shadow: 0 0 10px grey;
   transform-style: preserve-3d;
   cursor: pointer;
@@ -65,6 +96,7 @@ input[type="text"] {
   width: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  overflow: hidden;
 }
 .poke-card-frame:hover .poke-card {
   transform: rotateY(180deg);
@@ -82,7 +114,10 @@ input[type="text"] {
 h2 {
   text-align: center;
   position: relative;
-  top: 30px;
+  top: 110px;
+  font-family: sans-serif;
+  color: black;
+  font-size: 27px;
 }
 h2::first-letter {
   text-transform: uppercase;
@@ -90,24 +125,126 @@ h2::first-letter {
 .type {
   text-align: center;
   text-transform: uppercase;
-  background-color: white;
-  padding: 5px;
-  border-radius: 10px;
+  padding: 8px 15px;
+  border-radius: 20px;
   width: max-content;
   font-size: 12px;
   margin: 0 auto;
   position: relative;
-  top: 60px;
+  top: 130px;
+  font-family: sans-serif;
+  color: white;
 }
 img {
   width: 50%;
+}
+.poke-card-frame img {
+  width: 30%;
   margin: 0 auto;
   display: block;
-  position: relative;
-  top: 20px;
+  position: absolute;
+  bottom: 190px;
+  left: 35%;
 }
+
 .poke-card-back p {
   text-align: center;
   position: relative;
   top: 60px;
+}
+input[type="button"] {
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px grey;
+  border: none;
+  color: white;
+  background-color: rgb(95, 29, 219);
+  outline: none;
+  cursor: pointer;
+}
+input[type="button"]:active {
+  transform: scale(0.9);
+}
+
+.hp {
+  padding: 8px 15px;
+  border-radius: 20px;
+  background-color: white;
+  color: black;
+  margin-top: 10px;
+  margin-left: 145px;
+  margin-right: 10px;
+  text-align: center;
+}
+.hp span {
+  font-size: 22px;
+}
+.features {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  margin-top: 140px;
+  font-family: sans-serif;
+  color: #555555;
+}
+.features div {
+  text-align: center;
+}
+.features div p:first-child {
+  font-size: 21px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: black;
+}
+
+.poke-card-back > p {
+  margin-top: 125px;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  font-size: 25px;
+}
+.poke-card-back .abilities {
+  display: flex;
+  justify-content: center;
+  margin-top: 85px;
+  gap: 10px;
+  width: 100%;
+}
+.ability {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 8px 10px;
+  border-radius: 20px;
+  height: 30px;
+  width: max-content;
+  font-size: 12px;
+  font-family: sans-serif;
+  color: white;
+}
+
+.features-back {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  font-family: sans-serif;
+  color: #555555;
+  font-size: 18px;
+  position: relative;
+  top: -70px;
+}
+.features-back div {
+  text-align: center;
+}
+.features-back div p:first-child {
+  font-size: 21px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: black;
+}
+.poke-card-back span {
+  margin-right: 3px;
+  font-weight: 600;
+  color: black;
 }

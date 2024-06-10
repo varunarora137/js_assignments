@@ -25,46 +25,68 @@ function backgroundColor(type) {
   else if (type === "dragon") return "#DCAA2B";
 }
 
-function pokeFront(poke_card_front, poke_card, data, i) {
-  const heading = document.createElement("div");
-  heading.classList.add("heading");
-  heading.innerText = `#${i}`;
-  const img = document.createElement("img");
-  img.setAttribute("src", `${data.sprites.front_default}`);
-  img.setAttribute("alt", `${data.forms[0].name}`);
-  const h2 = document.createElement("h2");
-  h2.innerHTML = `${data.forms[0].name}`;
-  const type = document.createElement("div");
-  type.classList.add("type");
+function pokeFront(poke_card_front, poke_card, data) {
   const poke_type = data.types[0].type.name;
-  type.innerHTML = `${poke_type}`;
-  poke_card.style.backgroundColor = `${backgroundColor(poke_type)}`;
-  poke_card_front.append(heading);
-  poke_card_front.append(img);
-  poke_card_front.append(h2);
-  poke_card_front.append(type);
+  poke_card_front.innerHTML = `<div class="hp">HP <span class="hp-no">${data.stats[0].base_stat}</span></div>
+              <img
+                src=${data.sprites.other.dream_world.front_default}
+                alt="pokemon"
+              />
+              <h2>${data.forms[0].name}</h2>
+              <div class="type">${data.types[0].type.name}</div>
+              <div class="features">
+                <div>
+                  <p>${data.stats[1].base_stat}</p>
+                  <p>Attack</p>
+                </div>
+                <div>
+                  <p>${data.stats[2].base_stat}</p>
+                  <p>Defense</p>
+                </div>
+                <div>
+                  <p>${data.stats[5].base_stat}</p>
+                  <p>Speed</p>
+                </div>
+              </div>`;
+  poke_card_front.querySelector(
+    ".type"
+  ).style.backgroundColor = `${backgroundColor(poke_type)}`;
+  poke_card.style.background = `radial-gradient(
+    circle at 50% 0%,
+    ${backgroundColor(poke_type)} 36%,
+    rgb(255, 255, 255) 36%
+  )`;
 }
 
-function pokeBack(poke_card_back, data, i) {
-  const heading_back = document.createElement("div");
-  heading_back.classList.add("heading");
-  heading_back.innerText = `#${i}`;
-  const img_back = document.createElement("img");
-  img_back.setAttribute("src", `${data.sprites.back_default}`);
-  img_back.setAttribute("alt", `${data.forms[0].name}`);
-  const h2_back = document.createElement("h2");
-  h2_back.innerHTML = `${data.forms[0].name}`;
-  let abilities = "";
-  for (const arr of data.abilities) {
-    abilities += arr.ability.name + ",";
+function pokeBack(poke_card_back, data) {
+  let abilities = [];
+  for (const [index, arr] of data.abilities.entries()) {
+    abilities.push(arr.ability.name);
   }
-  const modAbilities = abilities.slice(0, abilities.length - 1);
-  const p = document.createElement("p");
-  p.innerHTML = `Abilities:<br/>${modAbilities}`;
-  poke_card_back.append(heading_back);
-  poke_card_back.append(img_back);
-  poke_card_back.append(h2_back);
-  poke_card_back.append(p);
+  const poke_type = data.types[0].type.name;
+  poke_card_back.innerHTML = `<img
+                src=${data.sprites.other.showdown.back_default}
+                alt="pokemon"
+              />
+              <p>Abilities</p>
+              <div class="abilities">
+                <div class="ability">ELECTRIc</div>
+                <div class="ability">ELECTRIc</div>
+              </div>
+              <div class="features-back">
+                <div>
+                  <p>Weight</p>
+                  <p><span>${data.weight}</span>lb</p>
+                </div>
+                <div>
+                  <p>Height</p>
+                  <p><span>${data.height}</span>cm</p>
+                </div>
+              </div>`;
+  poke_card_back.querySelectorAll(".ability").forEach((e, i) => {
+    e.style.backgroundColor = `${backgroundColor(poke_type)}`;
+    e.innerHTML = `${abilities[i]}`;
+  });
 }
 
 async function showAll() {
@@ -81,11 +103,11 @@ async function showAll() {
     poke_card_back.classList.add("poke-card-back");
 
     //poke-front
-    pokeFront(poke_card_front, poke_card, data, i);
+    pokeFront(poke_card_front, poke_card, data);
     //poke-front-end
 
     //poke-back
-    pokeBack(poke_card_back, data, i);
+    pokeBack(poke_card_back, data);
     //poke-back-end
 
     poke_card.append(poke_card_front);
@@ -98,14 +120,16 @@ async function showAll() {
 document.addEventListener("DOMContentLoaded", showAll);
 
 function reRender() {
-  poke_container.textContent = "";
-  flag = 0;
-  const select = document.querySelector("select");
-  select.value = "types";
-  text.value = "";
-  mainArr.forEach((poke) => {
-    poke_container.append(poke);
-  });
+  // poke_container.textContent = "";
+  // flag = 0;
+  // const select = document.querySelector("select");
+  // select.value = "types";
+  // text.value = "";
+  // mainArr.forEach((poke) => {
+  //   poke_container.append(poke);
+  // });
+
+  location.reload();
 }
 
 function showByType(e) {
@@ -126,7 +150,6 @@ function showByType(e) {
 }
 
 filter.addEventListener("click", () => {
-  console.log("hello");
   const select = document.querySelector("select");
   if (select.value === "types") reRender();
   else showByType(select);

@@ -8,9 +8,19 @@
   </head>
   <body>
     <div class="container">
-      <h1>GeeksterMon</h1>
+      <div class="header">
+        <img class="heading" src="./poke-heading.png" alt="pokemon-font" />
+        <iframe
+          src="https://giphy.com/embed/kuWN0iF9BLQKk"
+          width="120"
+          height="86"
+          frameborder="0"
+          class="gif"
+          allowfullscreen
+        ></iframe>
+      </div>
       <form>
-        <div>
+        <div class="forms">
           <select>
             <option value="types">Types</option>
             <option value="grass">Grass</option>
@@ -30,10 +40,8 @@
             <option value="dragon">Dragon</option>
           </select>
           <input type="button" value="Filter by Type" class="filter" />
-          <input type="button" value="Reset" class="reset" />
-        </div>
-        <div>
           <input type="text" placeholder="Enter Pokemon Name" class="text" />
+          <input type="button" value="Reset" class="reset" />
         </div>
       </form>
       <div class="poke-cards-container"></div>
