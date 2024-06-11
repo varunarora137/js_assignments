@@ -432,6 +432,7 @@ sign_up_button_2.addEventListener("click", () => {
       signup.style.display = "none";
       logout.style.display = "flex";
       welcome_name.style.display = "block";
+      document.body.classList.remove("no-scroll");
       welcome_name.querySelector("span").innerText = `${name_stored}`;
     }, 2000);
   }
@@ -445,6 +446,7 @@ logout.addEventListener("click", () => {
   logout.style.display = "none";
   welcome_name.style.display = "none";
   signup.style.display = "flex";
+  document.body.classList.remove("no-scroll");
   setTimeout(() => {
     successful_login.style.display = "none";
   }, 2000);
