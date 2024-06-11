@@ -397,7 +397,7 @@ sign_up_button.addEventListener("click", () => {
   if (name === "" || email === "" || pwd === "") {
     alert("Please Fill All The Fields");
   } else {
-    setInterval(() => (successful_login.style.display = "none"), 2000);
+    setTmeout(() => (successful_login.style.display = "none"), 2000);
     successful_login.style.display = "block";
     localStorage.setItem("pwd", pwd);
     localStorage.setItem("email", email);
@@ -420,7 +420,7 @@ sign_up_button_2.addEventListener("click", () => {
   } else {
     successful_login.style.display = "block";
     successful_login.querySelector("p").innerText = "Successfully Signed In";
-    setInterval(() => {
+    setTimeout(() => {
       successful_login.style.display = "none";
       sign_up_div.style.display = "none";
       signup.style.display = "none";
@@ -436,8 +436,10 @@ sign_up_button_2.addEventListener("click", () => {
 logout.addEventListener("click", () => {
   successful_login.style.display = "block";
   successful_login.querySelector("p").innerText = "Successfully Logged Out";
-  setInterval(() => {
-    (() => location.reload())();
+  logout.style.display = "none";
+  welcome_name.style.display = "none";
+  signup.style.display = "flex";
+  setTimeout(() => {
     successful_login.style.display = "none";
   }, 2000);
 });
