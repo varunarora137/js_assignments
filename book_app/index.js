@@ -403,7 +403,7 @@ sign_up_button.addEventListener("click", () => {
   if (name === "" || email === "" || pwd === "") {
     alert("Please Fill In All The Fields");
   } else {
-    setTmeout(() => (successful_login.style.display = "none"), 2000);
+    setTimeout(() => (successful_login.style.display = "none"), 2000);
     successful_login.style.display = "block";
     localStorage.setItem("pwd", pwd);
     localStorage.setItem("email", email);
