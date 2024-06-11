@@ -570,6 +570,18 @@ footer {
   font-family: "DM Sans", sans-serif;
   padding: 40px;
 }
+.sign-up-container-animation {
+  animation: ani 0.5s ease-in-out;
+}
+
+@keyframes ani {
+  0% {
+    transform: translateY(-500px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
 .sign-up-signup-hover {
   background-color: #eac645;
   color: black;
@@ -656,6 +668,18 @@ footer {
   display: none;
 }
 
+.sign-in-container-animation {
+  animation: anis 0.5s ease-in-out;
+}
+
+@keyframes anis {
+  0% {
+    transform: translateX(-500px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
 .sign-in-close {
   position: relative;
   font-size: 30px;

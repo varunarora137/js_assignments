@@ -353,6 +353,9 @@ function categorySelection() {
 
 signup.addEventListener("click", () => {
   sign_up_div.style.display = "block";
+  sign_up_container.classList.remove("sign-up-container-animation");
+  void sign_up_container.offset;
+  sign_up_container.classList.add("sign-up-container-animation");
   document.body.classList.add("no-scroll");
   signUpSignUp.classList.add("sign-up-signup-hover");
   sign_up_container.style.display = "block";
@@ -382,6 +385,9 @@ sign_in_close.addEventListener("click", () => {
 sign_in.addEventListener("click", () => {
   sign_up_container.style.display = "none";
   sign_in_container.style.display = "block";
+  sign_in_container.classList.remove("sign-in-container-animation");
+  void sign_in_container.offset;
+  sign_in_container.classList.add("sign-in-container-animation");
 });
 
 sign_up_sign_in_2.addEventListener("click", () => {
@@ -395,7 +401,7 @@ sign_up_button.addEventListener("click", () => {
   const pwd = pwd1.value;
 
   if (name === "" || email === "" || pwd === "") {
-    alert("Please Fill All The Fields");
+    alert("Please Fill In All The Fields");
   } else {
     setTmeout(() => (successful_login.style.display = "none"), 2000);
     successful_login.style.display = "block";
