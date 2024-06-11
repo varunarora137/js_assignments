@@ -25,11 +25,11 @@ doit01 function will reload the data first and than remove the remaing data exce
 
 For dark mode i have selected left categories and titles of all the card and added class "do-white" which will change text color to white and background color of body as black as well as whatever is required i have selected that element and changed accordingly using if else condition.
 
-### Support Ukraine
-
-I have added picture using display flex and added a button at the bottom to make the list items to move downward for better view, I have used if else condition and a flag based on which i will change position.
-
 ### Login and Register
 
 When a user click on signUp button on top than a pop up will come for login and in he click on register link in login page than loginpage will transformX by -450px and if user click on login link in register page than register page will transfromX by +450px and at tha time of signup click i have made the right nav and left nav opacity to 0 so only login and register page will be shown.
 again when user click on x button on login-register block opacity of right nav and left nave will become 1.
+
+## Hosted Link
+
+[Github Hosted Link](https://varunarora137.github.io/js_assignments/book_app/index.html)
