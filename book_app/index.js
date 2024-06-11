@@ -26,9 +26,19 @@ const sign_up_div = document.querySelector(".sign-up-div");
 const sign_in = document.querySelector(".sign-in");
 const sign_up_sign_in = document.querySelector(".sign-up-sign-in");
 const sign_up_sign_in_2 = document.querySelector(".sign-up-sign-in-2");
-
+const sign_up_button = document.querySelector(".sign-up-button");
+const sign_up_button_2 = document.querySelector(".sign-up-button-2");
+const successful_login = document.querySelector(".successful-login");
 const sign_up_container = document.querySelector(".sign-up-container");
 const sign_in_container = document.querySelector(".sign-in-container");
+const loading_screen = document.querySelector(".loading-screen");
+const name1 = document.querySelector(".name");
+const email1 = document.querySelector(".email");
+const pwd1 = document.querySelector(".pwd");
+const email2 = document.querySelector(".email2");
+const pwd2 = document.querySelector(".pwd2");
+const welcome_name = document.querySelector(".welcome-name");
+const logout = document.querySelector(".logout");
 let arr_data = [];
 let page_already_scrolled = 0;
 
@@ -77,7 +87,9 @@ function createDiv(data, length = 5) {
 }
 
 async function renderUI(count = 18) {
+  loading_screen.style.display = "block";
   const data = await fetchData();
+  loading_screen.style.display = "none";
   arr_data = data;
   book_container_div.innerHTML = "";
   for (let i = 0; i < count; i++) {
@@ -247,6 +259,7 @@ function seeMore() {
           }</span></p>`;
           const div = createSeeMoreDiv(data, data.length);
           main.append(div);
+          openModal();
         }
       });
     });
@@ -280,6 +293,7 @@ function createSeeMoreDiv(data, length = 5) {
                     : data[i].author
                 }</p>
               `;
+    inner_div.setAttribute("data-id", data[i]._id);
     div.querySelector(".all-book-container").append(inner_div);
   }
   return div;
@@ -314,14 +328,14 @@ function categorySelection() {
             .join("-");
         })
         .join(" ");
-      console.log(heading_text);
-      console.log(arr_data);
       arr_data.forEach(async (arr) => {
         if (arr.list_name === heading_text) {
+          loading_screen.style.display = "block";
           const fetch_data = await fetch(
             `https://books-backend.p.goit.global/books/category?category=${heading_text}`
           );
           const data = await fetch_data.json();
+          loading_screen.style.display = "none";
           main.innerHTML = "";
           const firstName = heading_text.split(" ").slice(0, -1).join(" ");
           const lastName = heading_text.split(" ").slice(-1).join(" ");
@@ -330,6 +344,7 @@ function categorySelection() {
           }</span></p>`;
           const div = createSeeMoreDiv(data, data.length);
           main.append(div);
+          openModal();
         }
       });
     });
@@ -372,4 +387,57 @@ sign_in.addEventListener("click", () => {
 sign_up_sign_in_2.addEventListener("click", () => {
   sign_up_container.style.display = "block";
   sign_in_container.style.display = "none";
+});
+
+sign_up_button.addEventListener("click", () => {
+  const name = name1.value;
+  const email = email1.value;
+  const pwd = pwd1.value;
+
+  if (name === "" || email === "" || pwd === "") {
+    alert("Please Fill All The Fields");
+  } else {
+    setInterval(() => (successful_login.style.display = "none"), 2000);
+    successful_login.style.display = "block";
+    localStorage.setItem("pwd", pwd);
+    localStorage.setItem("email", email);
+    localStorage.setItem("name", name);
+  }
+  name1.value = "";
+  pwd1.value = "";
+  email1.value = "";
+});
+
+sign_up_button_2.addEventListener("click", () => {
+  const email_get = email2.value;
+  const pwd_get = pwd2.value;
+  const name_stored = localStorage.getItem("name");
+  const email_stored = localStorage.getItem("email");
+  const pwd_stored = localStorage.getItem("pwd");
+
+  if (email_get !== email_stored && pwd_get !== pwd_stored) {
+    alert("Wrong Credentials");
+  } else {
+    successful_login.style.display = "block";
+    successful_login.querySelector("p").innerText = "Successfully Signed In";
+    setInterval(() => {
+      successful_login.style.display = "none";
+      sign_up_div.style.display = "none";
+      signup.style.display = "none";
+      logout.style.display = "flex";
+      welcome_name.style.display = "block";
+      welcome_name.querySelector("span").innerText = `${name_stored}`;
+    }, 2000);
+  }
+  pwd2.value = "";
+  email2.value = "";
+});
+
+logout.addEventListener("click", () => {
+  successful_login.style.display = "block";
+  successful_login.querySelector("p").innerText = "Successfully Logged Out";
+  setInterval(() => {
+    (() => location.reload())();
+    successful_login.style.display = "none";
+  }, 2000);
 });

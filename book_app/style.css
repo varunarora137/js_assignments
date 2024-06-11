@@ -260,6 +260,7 @@ main .book-heading-container > p {
   display: flex;
   flex-direction: column;
   cursor: pointer;
+  position: relative;
 }
 .book-container img {
   width: 180px;
@@ -666,4 +667,99 @@ footer {
 }
 .sign-in-close:hover {
   color: #4f2ee8;
+}
+.successful-login {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--modal-background);
+  display: none;
+}
+.login-done {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 25px;
+  width: 500px;
+  height: 100px;
+  background-color: green;
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  font-family: "DM Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  gap: 20px;
+}
+.sign-up-button-2 {
+  width: 500px;
+  height: 65px;
+  border: 2px solid var(--header-border-color);
+  background-color: var(--header-border-color);
+  border-radius: 30px;
+  margin: 0 auto 15px auto;
+  color: var(--header-backround-color);
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  padding-top: 20px;
+  transition: 0.2s linear;
+}
+.sign-up-button-2:hover {
+  background-color: #4f2ee8;
+  border: none;
+}
+.loading-screen {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--modal-background);
+  display: none;
+}
+.loading-screen img {
+  width: 80px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.welcome-name {
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--header-border-color);
+  display: none;
+}
+.welcome-name span {
+  font-style: italic;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+.logout {
+  cursor: pointer;
+  height: 45px;
+  width: 185px;
+  background-color: var(--signup-background);
+  color: var(--header-backround-color);
+  border: 1px solid var(--header-border-color);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  transition: 0.1s linear;
+  display: none;
+}
+.logout p:nth-child(2) {
+  font-size: 20px;
+  color: #eac645;
+}
+.logout:hover {
+  background-color: #eac645;
+  color: black;
 }

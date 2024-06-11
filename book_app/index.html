@@ -24,10 +24,15 @@
         alt=icon" />
         <p>Book</p>
       </div>
+      <p class="welcome-name">Welcome, <span>VARUN</span></p>
       <div class="btn-group">
         <div class="toggle"><div class="circle"></div></div>
         <div class="signup">
           <p>Sign up</p>
+          <p>➡</p>
+        </div>
+        <div class="logout">
+          <p>Log out</p>
           <p>➡</p>
         </div>
       </div>
@@ -142,9 +147,9 @@
       </header>
       <div class="sign-up-container">
         <div class="sign-up-close">x</div>
-        <input type="text" placeholder="NAME" />
-        <input type="email" placeholder="EMAIL" />
-        <input type="password" placeholder="PASSWORD" />
+        <input type="text" placeholder="NAME" class="name" />
+        <input type="email" placeholder="EMAIL" class="email" />
+        <input type="password" placeholder="PASSWORD" class="pwd" />
         <div class="sign-up-button">SIGN UP</div>
         <div class="sign-up-options">
           <span class="sign-up-sign-in sign-up-addon">SIGN UP</span
@@ -153,9 +158,9 @@
       </div>
       <div class="sign-in-container">
         <div class="sign-in-close">x</div>
-        <input type="email" placeholder="EMAIL" />
-        <input type="password" placeholder="PASSWORD" />
-        <div class="sign-up-button">SIGN UP</div>
+        <input type="email" placeholder="EMAIL" class="email2" />
+        <input type="password" placeholder="PASSWORD" class="pwd2" />
+        <div class="sign-up-button-2">SIGN IN</div>
         <div class="sign-up-options">
           <span class="sign-up-sign-in-2">SIGN UP</span>&nbsp;&nbsp;<span
             class="sign-in sign-up-addon"
@@ -163,6 +168,18 @@
           >
         </div>
       </div>
+    </div>
+    <div class="successful-login">
+      <div class="login-done">
+        <p>Successfully Signed Up</p>
+        <img src="./tick2.gif" alt="gif" />
+      </div>
+    </div>
+    <div class="loading-screen">
+      <img
+        src="https://cdn.pixabay.com/animation/2022/07/29/03/42/03-42-18-223_512.gif"
+        alt="processing"
+      />
     </div>
     <script src="index.js"></script>
   </body>
