@@ -12,14 +12,6 @@ const state = document.querySelector(".state span");
 const city = document.querySelector(".city span");
 const village = document.querySelector(".village span");
 
-let input_fname = "",
-  input_lname = "",
-  input_country = "",
-  input_number = "",
-  input_state = "",
-  input_city = "",
-  input_village = "";
-
 const color_combinations = [
   ["#C83642", "#F4CCD2"],
   ["#396C2F", "#A3C664"],
@@ -28,6 +20,71 @@ const color_combinations = [
   ["#66A5AD", "#C4DFE5"],
   ["#31473A", "#EDF4F2"],
 ];
+
+const storedUserInfo = localStorage.getItem("userInformation");
+let userInfo = storedUserInfo ? JSON.parse(storedUserInfo) : null;
+
+if (!userInfo || !isValidUserInfo(userInfo)) {
+  storeUserInfo();
+} else {
+  setFields(userInfo);
+}
+
+function isValidUserInfo(userInfo) {
+  return (
+    userInfo.fname &&
+    userInfo.lname &&
+    userInfo.country &&
+    userInfo.number &&
+    userInfo.state &&
+    userInfo.city &&
+    userInfo.village
+  );
+}
+
+function storeUserInfo() {
+  let fname, lname, country, number, state, city, village;
+  do {
+    fname = prompt("Enter your first name:");
+  } while (!fname);
+
+  do {
+    lname = prompt("Enter your last name:");
+  } while (!lname);
+
+  do {
+    country = prompt("Enter your country:");
+  } while (!country);
+
+  do {
+    number = prompt("Enter your phone number:");
+  } while (!number);
+
+  do {
+    state = prompt("Enter your state:");
+  } while (!state);
+
+  do {
+    city = prompt("Enter your city:");
+  } while (!city);
+
+  do {
+    village = prompt("Enter your village:");
+  } while (!village);
+
+  userInfo = {
+    fname,
+    lname,
+    country,
+    number,
+    state,
+    city,
+    village,
+  };
+
+  localStorage.setItem("userInformation", JSON.stringify(userInfo));
+  setFields(userInfo);
+}
 
 toggle_div.addEventListener("click", () => {
   if (circle.classList.contains("moveRight")) {
@@ -53,56 +110,18 @@ theme.addEventListener("click", () => {
   }
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  input_fname = prompt("Enter your first name:");
-  input_lname = prompt("Enter your last name:");
-  input_country = prompt("Enter your country:");
-  input_number = prompt("Enter your phone number:");
-  input_state = prompt("Enter your state:");
-  input_city = prompt("Enter your city:");
-  input_village = prompt("Enter your village:");
-
-  if (
-    input_fname !== "" &&
-    input_lname !== "" &&
-    input_city !== "" &&
-    input_country !== "" &&
-    input_number !== "" &&
-    input_village !== "" &&
-    input_state !== ""
-  ) {
-    localStorage.setItem("fname", input_fname);
-    localStorage.setItem("lname", input_lname);
-    localStorage.setItem("country", input_country);
-    localStorage.setItem("number", input_number);
-    localStorage.setItem("state", input_state);
-    localStorage.setItem("city", input_city);
-    localStorage.setItem("village", input_village);
-    setFields();
-  } else {
-    alert("Please fill all the fields");
-    location.reload();
-  }
-});
-
-function setFields() {
-  fname.innerText = localStorage.getItem("fname");
-  lname.innerText = localStorage.getItem("lname");
-  country.innerText = localStorage.getItem("country");
-  number.innerText = localStorage.getItem("number");
-  state.innerText = localStorage.getItem("state");
-  city.innerText = localStorage.getItem("city");
-  village.innerText = localStorage.getItem("village");
+function setFields(obj) {
+  fname.innerText = obj.fname;
+  lname.innerText = obj.lname;
+  country.innerText = obj.country;
+  number.innerText = obj.number;
+  state.innerText = obj.state;
+  city.innerText = obj.city;
+  village.innerText = obj.village;
 }
 
 clear.addEventListener("click", () => {
-  localStorage.removeItem("fname");
-  localStorage.removeItem("lname");
-  localStorage.removeItem("country");
-  localStorage.removeItem("number");
-  localStorage.removeItem("state");
-  localStorage.removeItem("city");
-  localStorage.removeItem("village");
+  localStorage.removeItem("userInformation");
 
   fname.innerText = "";
   lname.innerText = "";
