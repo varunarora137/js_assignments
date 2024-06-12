@@ -1,0 +1,103 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.4s all ease-in-out;
+  overflow-y: hidden;
+  background-color: #f0f0f0;
+}
+.toggle-div {
+  background-color: #222222;
+  height: 60px;
+  width: 120px;
+  align-self: flex-end;
+  border-radius: 30px;
+  margin-top: 20px;
+  cursor: pointer;
+  margin-right: 50px;
+}
+
+.circle {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: white;
+  position: relative;
+  top: -39px;
+  left: 5px;
+  transition: 0.4s all ease-in-out;
+}
+.moveRight {
+  transform: translateX(60px);
+}
+img:nth-child(1) {
+  width: 40px;
+  position: relative;
+  top: 10px;
+  left: 10px;
+}
+img:nth-child(2) {
+  width: 40px;
+  position: relative;
+  top: 10px;
+  left: 25px;
+}
+.card {
+  font-family: sans-serif;
+  padding: 30px;
+  width: 440px;
+  height: 350px;
+  margin-top: 100px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  font-weight: 600;
+  transition: 0.4s all ease-in-out;
+}
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  text-decoration: underline;
+}
+.card p {
+  padding-bottom: 10px;
+}
+.content {
+  display: flex;
+  gap: 70px;
+}
+button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #4f2ee8;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  margin-left: 18px;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: 0.1s linear;
+}
+.clear {
+  margin-left: 10px;
+}
+button:hover {
+  transform: scale(1.1);
+}
+button:active {
+  transform: scale(0.9);
+}
+.theme {
+  background: linear-gradient(to bottom, #fc00ff, #013839);
+}
+span {
+  text-transform: capitalize;
+  font-weight: 400;
+  /* margin-left: 70px; */
+}
