@@ -134,7 +134,6 @@ theme.addEventListener("click", () => {
 });
 
 graph_type.addEventListener("click", () => {
-  anime.remove(".el");
   ind = (ind + 1) % 6;
   const graph_name = graph_options[ind];
   obj.type = graph_name;
