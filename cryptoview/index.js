@@ -51,13 +51,13 @@ async function fetchPrice(coin_name, currency) {
 async function showTrending() {
   document.querySelector(".loading-screen").style.display = "block";
   const data = await fetchData();
-  document.querySelector(".loading-screen").style.display = "none";
   document.querySelector(".trending-container").innerHTML = "";
   const price = [];
   for (let i = 0; i < 7; i++) {
     const pr = await fetchPrice(data.coins[i].item.id, "inr");
     price.push(pr);
   }
+  document.querySelector(".loading-screen").style.display = "none";
   for (let i = 0; i < 7; i++) {
     const trending = `<div class="trending">
             <img
