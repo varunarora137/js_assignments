@@ -53,8 +53,12 @@ async function showTrending() {
   const data = await fetchData();
   document.querySelector(".loading-screen").style.display = "none";
   document.querySelector(".trending-container").innerHTML = "";
+  const price = [];
   for (let i = 0; i < 7; i++) {
-    const price = await fetchPrice(data.coins[i].item.id, "inr");
+    const pr = await fetchPrice(data.coins[i].item.id, "inr");
+    price.push(pr);
+  }
+  for (let i = 0; i < 7; i++) {
     const trending = `<div class="trending">
             <img
               src=${data.coins[i].item.thumb}
@@ -62,7 +66,7 @@ async function showTrending() {
             />
             <div class="content">
               <h2>${data.coins[i].item.name} (${data.coins[i].item.symbol})</h2>
-              <p>₹<span>${price}</span></p>
+              <p>₹<span>${price[i]}</span></p>
             </div>
           </div>`;
     document.querySelector(".trending-container").innerHTML += trending;
