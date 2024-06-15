@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>CryptoView|Geekster</title>
+    <link rel="shortcut icon" href="./images/logo.png" type="image/png" />
+    <title>CryptoView | Geekster</title>
   </head>
   <body data-mode="light">
     <header>
@@ -17,7 +18,7 @@
         <button class="search">Search</button>
       </div>
     </header>
-    <main>
+    <main class="main-1">
       <div class="heading-img">
         <div class="heading-div">
           <h2>CryptoView</h2>
@@ -25,7 +26,34 @@
         </div>
         <img src="./images/main_image.svg" alt="main_img" />
       </div>
+      <div class="trending-div">
+        <h2>Top Coins</h2>
+        <div class="trending-container"></div>
+      </div>
     </main>
+    <main class="main-2">
+      <div class="main-2-header">
+        <h2>Search</h2>
+        <div class="input-div">
+          <input
+            type="text"
+            class="text"
+            placeholder="Enter Coin Name..."
+            autofocus
+          />
+          <button class="query-search">Search</button>
+        </div>
+      </div>
+      <div class="line"></div>
+      <div class="main-2-search-container"></div>
+    </main>
+    <div class="modal-outer-div"></div>
+    <div class="loading-screen">
+      <img
+        src="https://cdn.pixabay.com/animation/2022/07/29/03/42/03-42-18-223_512.gif"
+        alt="processing"
+      />
+    </div>
     <footer>
       <p>© CryptoView | Developed by Varun</p>
       <img class="not-inverted" src="./images/github_logo.png" alt="git" />
