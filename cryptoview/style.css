@@ -123,6 +123,7 @@ footer img {
   display: flex;
   gap: 15px;
   animation: move 19s linear infinite;
+  animation-delay: 5s;
 }
 .trending {
   flex-shrink: 0;
