@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+[data-mode="light"] {
+  --text-color: rgb(0, 0, 0);
+  --header-backround-color: #ffffff;
+  --toogle-second-color: #d2cfdd;
+  --main-background-color: #e5e5e5;
+}
+[data-mode="dark"] {
+  --text-color: rgb(255, 255, 255);
+  --header-backround-color: #000;
+  --toogle-second-color: #67666d;
+  --main-background-color: #202024;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+  background-color: var(--main-background-color);
+}
+header {
+  width: 99vw;
+  height: 55px;
+  background-color: var(--header-backround-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.heading img {
+  height: 35px;
+  width: 35px;
+}
+.heading h1 {
+  cursor: pointer;
+  color: var(--text-color);
+}
+.search-div {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.search {
+  font-size: 22px;
+  padding: 4px 15px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #fca311;
+  cursor: pointer;
+  transition: 0.1s linear;
+  background-color: transparent;
+  color: var(--text-color);
+}
+.search:hover {
+  background-color: #fca311;
+}
+.toggle {
+  cursor: pointer;
+  width: 40px;
+  height: 20px;
+  border-radius: 10px;
+  background: linear-gradient(to bottom, #4e30d9, var(--toogle-second-color));
+  padding: 0px 1px;
+}
+.toggle .circle {
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background-color: var(--text-color);
+}
+.circle-move {
+  transform: translateX(19px);
+}
+main {
+  min-height: 96.5vh;
+}
+.heading-img {
+  display: flex;
+  color: var(--text-color);
+}
+.heading-img img {
+  width: 610px;
+  height: 575px;
+  padding-top: 80px;
+  margin-left: -20px;
+}
+.heading-div {
+  margin-top: 308px;
+  padding: 0 160px;
+}
+footer {
+  width: 99vw;
+  height: 55px;
+  background-color: var(--header-backround-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  color: var(--text-color);
+}
+footer img {
+  width: 25px;
+  cursor: pointer;
+}
+.inverted {
+  display: none;
+}
