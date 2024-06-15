@@ -48,13 +48,6 @@ async function fetchPrice(coin_name, currency) {
   }
 }
 
-// async function convertPrice() {
-//   const price = await fetchPrice("bitcoin");
-//   console.log("hello");
-// }
-
-// convertPrice();
-
 async function showTrending() {
   document.querySelector(".loading-screen").style.display = "block";
   const data = await fetchData();
@@ -75,7 +68,10 @@ async function showTrending() {
     document.querySelector(".trending-container").innerHTML += trending;
   }
 }
-showTrending();
+
+document.addEventListener("DOMContentLoaded", () => {
+  showTrending();
+});
 
 async function showAllCoins(txt) {
   const fetch_data = await fetch(
