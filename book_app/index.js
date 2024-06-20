@@ -124,6 +124,9 @@ renderBookHeading();
 document.addEventListener("DOMContentLoaded", () => {
   const mode = localStorage.getItem("data-toggle") || "light";
   localStorage.setItem("data-toggle", mode);
+  if (mode === "dark") {
+    document.querySelector(".circle").classList.add("circle-move");
+  }
   document.body.setAttribute(
     "data-toggle",
     `${localStorage.getItem("data-toggle")}`
@@ -140,7 +143,11 @@ toggleButton.addEventListener("click", () => {
 
 up_div.addEventListener("click", () => {
   if (up.style.display === "block") {
-    ukraine_container.scrollTop = 0;
+    // ukraine_container.scrollTop = 0;
+    ukraine_container.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
     up.style.display = "none";
     down.style.display = "block";
   } else {
@@ -148,7 +155,11 @@ up_div.addEventListener("click", () => {
       page_already_scrolled + initial_ukraine_container_height <
       total_ukraine_container_height
     ) {
-      ukraine_container.scrollTop = page_already_scrolled + 100;
+      // ukraine_container.scrollTop = page_already_scrolled + 100;
+      ukraine_container.scrollTo({
+        top: page_already_scrolled + 100,
+        behavior: "smooth",
+      });
       page_already_scrolled += 100;
     }
     if (
